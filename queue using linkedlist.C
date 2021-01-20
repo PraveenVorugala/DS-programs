@@ -2,25 +2,25 @@
 #include <stdio.h>
 #include<stdlib.h>
 struct node{
-    int p;                                        //p is for data that has to be stored in list 
+    int p;                          //p is for data that has to be stored in list 
     struct node *next;                       //n is  for pointing to next element 
 };
 struct node * neck =NULL;       //neck is my pointer for deleting                                                                       
 struct node * back=NULL;       //back is my pointer  for adding  
 void enequeue(int x)       
-{                                             // enequeue for adding elements at back end    
+{                       
    struct node *u;
    u=(struct node *)malloc(sizeof(struct node));
-    u->p=x;
-    u->next=NULL;
+    u->p=x;                     // adding element to node 
+    u->next=NULL;              // next pointer pointing to null
     if(neck==NULL&&back==NULL)  // first , last node to neck
-    neck=back=u;
-    back->next=u;
-    back=u;
+    neck=back=u;              // all pointing to neck 
+    back->next=u;             // data added inorder of queue 
+    back=u;                  // back is pointing to latest added element 
 }
-void dequeue()     // deleting elemnts we  make neck move 
+void dequeue()     
 {                                  
-    neck=neck->next;
+    neck=neck->next;        // deleting element from neck 
 }
 void main()
 {
