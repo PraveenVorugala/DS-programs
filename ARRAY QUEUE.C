@@ -28,5 +28,3 @@ void main()
 }
 
 
-output
-30,95,80
