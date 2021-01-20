@@ -31,7 +31,7 @@ void eneque(int x)
 void dequee()     
 { 
     pop();            //pop operation of stack used in dequee.
-    for(k=0;k<i-1;k++)  
+    for(k=0;k<i;k++)  
     {
         a[k]=b[j];  
         j--;
