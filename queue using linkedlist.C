@@ -24,7 +24,6 @@ void dequeue()     // deleting elemnts we  make neck move
 }
 void main()
 {
-  clrscr();
   enequeue(5);
   enequeue(3);
   enequeue(13);
@@ -38,5 +37,4 @@ void main()
     printf("%d,",neck->p);
     neck=neck->next;
     }
-    getch();
 }
