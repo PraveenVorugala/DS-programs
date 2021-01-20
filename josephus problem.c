@@ -33,7 +33,7 @@ int survivor(struct node **head, int k)
     int i;
  
     q = p = *head;    // intialised to head
-    while (p->next != p)
+    while (p->next != p)   // circular condition 
     {
         for (i = 0; i < k - 1; i++)
         {
@@ -86,7 +86,7 @@ void create (struct node **head)
         {
             rear->next = temp;
         }
-        rear = temp;
+        rear = temp;  // latest node is rear 
         printf("Do you want to add a Person by entering his number [1/0]? ");
         scanf("%d", &ch);
     } while (ch != 0);
