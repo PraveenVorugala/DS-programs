@@ -40,7 +40,3 @@ void main()
     }
     getch();
 }
-
-
-output
-13,45,2,78
