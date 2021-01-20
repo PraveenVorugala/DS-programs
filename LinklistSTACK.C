@@ -25,9 +25,6 @@ void pop()                               // for pop we make the surf  to  point 
 {
     surf=surf->n;
 }
-
-
-
 void main()
 {
   clrscr();
@@ -41,8 +38,3 @@ void main()
   display(surf);
 getch();
 }
-
-
-
-output
-45,3,5
