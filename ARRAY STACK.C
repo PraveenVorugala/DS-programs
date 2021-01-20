@@ -3,18 +3,13 @@ int a[100],i=0;               //global array and i
 void push(int x)            // push by using i and into array 
 {
     a[i]=x;
-    i++;
-    
+    i++;   
 }
 void pop()                   //pop by using same i and out of array 
 {
  i=i-1;
    
 }
-
-
-
-
 void display()            // displaying array with k
 {
     int k;
@@ -35,7 +30,3 @@ void main()
     display();
     getch();
 }
-
-
-output 
-23,20,10,5
