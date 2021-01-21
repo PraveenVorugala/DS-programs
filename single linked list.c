@@ -3,7 +3,7 @@
 struct node
 {
     int d;
-    struct node *next;
+    struct node *next;  // next element pointer 
 };
 struct node *h=NULL;  // head intialised to NULL
 struct node *f=NULL;   // intialised to NULL
@@ -18,7 +18,7 @@ void insert()
  if(h==NULL)  // if head is NULL then first element in list 
  h=f=q;
  f->next=q;  // if other elements also in list 
- f=q;
+ f=q;  // latest node is updated to f 
 }
 void display()
 {
@@ -27,7 +27,7 @@ void display()
  while(q!=NULL)   // display untill last node 
  {
      printf("%d,",q->d);
-     q=q->next;
+     q=q->next;  // next element traversing 
  }
  printf("\n");
 }
@@ -46,8 +46,8 @@ void search(int a)  // for searching the node which has input element
     {
     if(a==q->d)
     printf("pos=%d\n",t+1);   // print position 
-    q=q->next;
-    t++;
+    q=q->next; // traversing next elements 
+    t++; 
     }
 }
 void insertlast()
@@ -57,8 +57,8 @@ void insertlast()
     int x;
     scanf("%d",&x);
     q=(struct node*)malloc(sizeof(struct node *));
-    q->d=x;
-    v=h;
+    q->d=x;  // adding element to node 
+    v=h;  
     while(v->next!=NULL)   // tracing upto last element 
     v=v->next;
     v->next=q;  // adding to last element 
@@ -73,15 +73,15 @@ void insertpos(int z)
     q=(struct node*)malloc(sizeof(struct node *));
     int x,k,d=1;
     scanf("%d",&x);
-    q->d=x;
+    q->d=x;  // adding element to node 
     v=h;
     while(d!=z)      // tracing upto given position 
     {
     d++;    
-    v=v->next;
+    v=v->next;  // next element 
     }
-    t=(v->next);
-    v->next=q;
+    t=(v->next); 
+    v->next=q;  // adding node in given position 
     q->next=t;
 }
 void main()
