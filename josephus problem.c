@@ -6,27 +6,20 @@ struct node
     int num;
     struct node *next;
 }; 
-void create(struct node **);    // function for creating persons with circular list
-void display(struct node *);   // displays the people in the list
-int survivor(struct node **, int);  // function for finding the person who is not killed
-  
-int main()
+void display(struct node *head)
 {
-    struct node *head = NULL;
-    int survive, skip;
-     
-    create(&head);
-    printf("The persons in circular list are:\n");
-    display(head);
-    printf("Enter the number of persons to be skipped: ");
-    scanf("%d", &skip);
-    survive = survivor(&head, skip);
-    printf("The person number to survive is : %d\n", survive);
-    free(head);
+    struct node *temp;
  
-    return 0;
+    temp = head;
+    printf("%d   ", temp->num);
+    temp = temp->next;
+    while (head != temp)
+    {
+        printf("%d   ", temp->num);   // display people in list 
+        temp = temp->next;
+    }
+    printf("\n");
 }
- 
 int survivor(struct node **head, int k)
 {
     struct node *p, *q;
@@ -49,23 +42,6 @@ int survivor(struct node **head, int k)
  
     return (p->num);   // survior number is returned
 }
-
-void display(struct node *head)
-{
-    struct node *temp;
- 
-    temp = head;
-    printf("%d   ", temp->num);
-    temp = temp->next;
-    while (head != temp)
-    {
-        printf("%d   ", temp->num);   // display people in list 
-        temp = temp->next;
-    }
-    printf("\n");
-}
-
- 
 void create (struct node **head)
 {
     struct node *temp, *rear;
@@ -92,4 +68,19 @@ void create (struct node **head)
     } while (ch != 0);
     rear->next = *head;   // condition for circular list 
 }
+int main()
+{
+    struct node *head = NULL;
+    int survive, skip;
+     
+    create(&head);  // create function 
+    printf("The persons in circular list are:\n");
+    display(head);  // display using head 
+    printf("Enter the number of persons to be skipped: ");
+    scanf("%d", &skip);
+    survive = survivor(&head, skip);  // function to find survivor 
+    printf("The person number to survive is : %d\n", survive);
+    free(head);
  
+    return 0;
+}
