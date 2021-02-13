@@ -44,5 +44,5 @@ void main()
 	graph[i][j]=5000;
 	}
 	}}
-	floydwarshall(graph,n);  //calling adjancey matrix
+	floydwarshall(graph,n);  //calling floyd warshall function
 } 
