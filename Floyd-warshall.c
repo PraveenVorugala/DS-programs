@@ -32,7 +32,9 @@ void main()
 { 
     int n;
     int graph[9][9];
+    printf("enter number of vertices");	
     scanf("%d",&n);
+	printf("enter adjaceny matrix");   
 	for(int i=0;i<n;i++)
 	{
 	for(int j=0;j<n;j++)
